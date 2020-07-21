@@ -1,0 +1,67 @@
+a,
+a:focus,
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-container {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  box-shadow: inset 0 0 5rem rgba(0, 255, 0, 0.5);
+  height: 80%;
+  width: 100%;
+  background: #0e531f;
+  background: -webkit-linear-gradient(top right, #0e531f, #02c48d);
+  background: -moz-linear-gradient(top right, #0e531f, #02c48d);
+  background: linear-gradient(to bottom left, #0e531f, #02c48d);
+}
+.header-container .cover-container {
+  max-width: 70em;
+}
+.header-container .cover-container .masthead {
+  margin-bottom: 2rem;
+}
+.header-container .cover-container .masthead .masthead-brand {
+  margin-bottom: 0;
+  font-family: "Nanum Gothic", sans-serif;
+}
+.header-container .cover-container .masthead .masthead-brand .sip {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+}
+.header-container .cover-container .masthead .nav-masthead .nav-link {
+  padding: 0.25rem 0;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+  border-bottom: 0.2rem solid transparent;
+  transition: 0.4s;
+}
+.header-container .cover-container .masthead .nav-masthead .nav-link:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+.header-container .cover-container .masthead .nav-masthead .nav-link + .nav-link {
+  margin-left: 1.5rem;
+}
+.header-container .cover-container .masthead .nav-masthead .active {
+  color: #fff !important;
+  border-bottom-color: #fff !important;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+
+  .nav-masthead {
+    float: right;
+  }
+
+  .nav-masthead .nav-link + .nav-link {
+    margin-left: 2rem;
+  }
+}
+
+/*# sourceMappingURL=header.component.css.map */

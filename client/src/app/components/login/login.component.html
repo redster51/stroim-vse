@@ -1,0 +1,18 @@
+<form class="form-signin text-center">
+  <img class="mb-4" src="../../../assets/images/building.png" alt="" width="128" height="128">
+  <h1 class="h3 mb-3 font-weight-normal">Авторизуйтесь</h1>
+  <label for="inputEmail" class="sr-only">Имя пользователя</label>
+  <form>
+    <input type="email" id="inputEmail" [(ngModel)]="adminForm.login" name="login" class="form-control"
+           placeholder="Имя пользователя"
+           required autofocus>
+    <label for="inputPassword" class="sr-only">Пароль</label>
+    <input type="password" id="inputPassword" [(ngModel)]="adminForm.password"
+           name="password" class="form-control"
+           placeholder="Пароль"
+           required>
+  </form>
+  <button class="btn btn-lg btn-success btn-block" type="submit"
+          (click)="signIn()" (keyup.enter)="signIn()">Авторизоваться
+  </button>
+</form>
