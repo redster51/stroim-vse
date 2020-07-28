@@ -1,10 +1,11 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {HttpErrorResponse, HttpEventType} from "@angular/common/http";
-import {of} from "rxjs";
-import {catchError, map} from "rxjs/operators";
-import {ImageUploadService} from "../../services/image-upload.service";
-import {TokenService} from "../../services/token.service";
-import {Router} from "@angular/router";
+import {HttpErrorResponse, HttpEventType} from '@angular/common/http';
+import {of} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {ImageUploadService} from '../../services/image-upload.service';
+import {TokenService} from '../../services/token.service';
+import {Router} from '@angular/router';
+import {ProjectService} from '../../services/project.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,13 +13,19 @@ import {Router} from "@angular/router";
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;
+  @ViewChild('fileUpload', {static: false}) fileUpload: ElementRef;
 
-  files = []
-  uploadedFiles = [];
+  files = [];
+  projectForm = {
+    name: '',
+    description: '',
+    endDate: '',
+    photos: []
+  }
 
   constructor(private uploadService: ImageUploadService,
               private tokenService: TokenService,
+              private projectService: ProjectService,
               private router: Router) {
   }
 
@@ -49,7 +56,7 @@ export class AdminComponent implements OnInit {
       })).subscribe((event: any) => {
       if (typeof (event) === 'object') {
         console.log(event.body);
-        this.uploadedFiles.push(event.body.link);
+        this.projectForm.photos.push(event.body.link);
       }
     });
   }
@@ -68,9 +75,16 @@ export class AdminComponent implements OnInit {
 
   private uploadFiles() {
     this.fileUpload.nativeElement.value = '';
-    this.files.forEach((file, index) => {
+    this.files.forEach((file) => {
       this.uploadFile(file);
     });
-    console.log(this.uploadedFiles)
+  }
+
+  saveProject() {
+    this.projectService.save(this.projectForm).subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+    });
   }
 }

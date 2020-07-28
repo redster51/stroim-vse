@@ -12,8 +12,10 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {TechnologyComponent} from './components/technology/technology.component';
 import {ContactsComponent} from './components/contacts/contacts.component';
 import {ServicesComponent} from './components/services/services.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {AboutComponent} from './components/about/about.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import {FormsModule} from "@angular/forms";
     TechnologyComponent,
     ContactsComponent,
     ServicesComponent,
+    AboutComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

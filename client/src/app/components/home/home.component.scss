@@ -1,0 +1,45 @@
+.main {
+  background: #02c48d url(../../../assets/images/house.png) no-repeat center center;
+  background-size: cover;
+  padding: 7rem 0 10rem 0;
+  color: white;
+  a {
+    text-decoration: none;
+  }
+}
+
+.more {
+  padding: 0.6em 2.5em;
+  border-radius: 5em;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 2px 20px -5px grey;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+.more:hover {
+  background-position: right center; /* изменить направление движения цвета можно здесь */
+  color: #ffffff;
+}
+
+.gradien-button {
+  background-image: -moz-linear-gradient( 37deg, rgb(95,164,74) 0%, rgb(127,215,171) 100%);
+  background-image: -webkit-linear-gradient( 37deg, rgb(95,164,74) 0%, rgb(127,215,171) 100%);
+  background-image: linear-gradient( 37deg, rgb(74, 154, 58) 0%, rgb(169, 248, 206) 100%);
+}
+
+.second-priority {
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+.first-priority {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0.5rem 0;
+}
+

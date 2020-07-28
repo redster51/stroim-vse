@@ -39,7 +39,7 @@ module.exports.login = (req, res) => {
             return;
         }
 
-        // If a user is found
+        // If a user is fund
         if (user) {
             token = user.generateJwt();
             res.status(200);
