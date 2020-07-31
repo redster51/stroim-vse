@@ -9,17 +9,18 @@ import {TechnologyComponent} from "./components/technology/technology.component"
 import {ContactsComponent} from "./components/contacts/contacts.component";
 import {ServicesComponent} from "./components/services/services.component";
 
+const sip = 'Строим SIP';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: HomeComponent, data: {title: sip}},
   {path: 'admin', redirectTo: 'login'},
-  {path: 'admin-page', component: AdminComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'technology', component: TechnologyComponent},
-  {path: 'contacts', component: ContactsComponent},
-  {path: 'services', component: ServicesComponent},
-  {path: 'login', component: LoginComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: 'admin-page', component: AdminComponent, data: {title: `Страница админа | ${sip}`}},
+  {path: 'projects', component: ProjectsComponent, data: {title: `Проекты | ${sip}`}},
+  {path: 'technology', component: TechnologyComponent, data: {title: `Технология | ${sip}`}},
+  {path: 'contacts', component: ContactsComponent, data: {title: `Контакты | ${sip}`}},
+  {path: 'services', component: ServicesComponent, data: {title: `Услуги | ${sip}`}},
+  {path: 'login', component: LoginComponent, data: {title: `Авторизация админа | ${sip}`}},
+  {path: '**', component: NotFoundComponent, data: {title: `Страница не найдена | ${sip}`}}
 ];
 
 @NgModule({

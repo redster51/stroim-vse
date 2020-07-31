@@ -27,7 +27,7 @@
   color: #ffffff;
 }
 
-.gradien-button {
+.gradient-button {
   background-image: -moz-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
   background-image: -webkit-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
   background-image: linear-gradient(37deg, #4a9a3a 0%, #a9f8ce 100%);
