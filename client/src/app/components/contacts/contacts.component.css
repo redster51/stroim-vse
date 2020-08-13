@@ -1,3 +1,93 @@
+.main {
+  background: #02c48d url(../../../assets/images/contacts-header.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 7rem 0 10rem 0;
+}
 
+.first-priority {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 2rem 0;
+}
+
+.second-priority {
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+.third-priority {
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.body-container {
+  background-image: -moz-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+  background-image: -webkit-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+  background-image: -ms-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+  background-image: linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+}
+
+.container {
+  padding: 1em;
+}
+
+.line {
+  border-bottom: 3px solid #fff;
+}
+
+.spacer {
+  margin: 1.5em 0;
+}
+
+.contacts a {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0.2em auto;
+  text-decoration: none;
+}
+.contacts .line {
+  width: 60%;
+  margin: 0.5em auto;
+}
+.contacts .email {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contacts .number {
+  transition: color 0.3s;
+}
+.contacts .email:hover, .contacts .number:hover {
+  color: #36633b;
+  transition: color 0.3s;
+}
+.contacts .viber {
+  display: block;
+  background: url("../../../assets/images/viber.png") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.contacts .whatsapp {
+  display: block;
+  background: url("../../../assets/images/whatsapp.png") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.contacts .messenger {
+  transition: background-color 0.3s;
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+.contacts .messenger:hover {
+  transition: background-color 0.3s;
+  background-color: #36633b;
+}
+
+@media (max-width: 450px) {
+  a {
+    font-size: 25px;
+  }
+}
 
 /*# sourceMappingURL=contacts.component.css.map */

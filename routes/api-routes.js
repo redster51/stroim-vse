@@ -21,4 +21,8 @@ router.post('/signin', ctrlAuth.login);
 router.post('/projects', ctrlProject.saveProject);
 router.get('/projects', ctrlProject.getProjects);
 
+// images
+router.post('/images', ctrlProject.savePhotos);
+router.get('/images/:id', ctrlProject.getPhoto);
+
 module.exports = router;

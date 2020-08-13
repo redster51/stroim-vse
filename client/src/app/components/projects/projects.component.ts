@@ -7,6 +7,7 @@ import {ProjectService} from '../../services/project.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  backendId = '/api/images/';
   projects;
   constructor(private projectService: ProjectService) { }
 

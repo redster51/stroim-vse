@@ -5,12 +5,16 @@
   width: 100%;
   text-align: left;
 
+  a {
+    text-decoration: none;
+  }
+
   .footer-body {
     max-width: 70em;
-    padding: 1.5em 0;
+    padding: 1em 0;
     margin: 0 auto;
 
-    .footer-left, .footer-center, .footer-right {
+    .footer-left, .contacts, .footer-right {
       display: inline-block;
       vertical-align: top;
     }
@@ -48,7 +52,7 @@
       }
     }
 
-    .footer-center {
+    .contacts {
       width: 35%;
 
       a {
@@ -61,27 +65,47 @@
       .email {
         text-decoration: none;
         color: #20c997;
-        margin-top: 1em;
+        margin-top: 0.25em;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      .spacer {
+        width: 1em;
       }
 
-      .viber:before {
-        content: "";
+      .row {
+        .ok {
+          display: block;
+          background: url("../../../assets/images/odnoklassniki.png") no-repeat;
+          width: 32px;
+          height: 32px;
+        }
+
+        .vk {
+          display: block;
+          background: url("../../../assets/images/vk.png") no-repeat;
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      .viber {
         display: block;
         background: url("../../../assets/images/viber.png") no-repeat;
         width: 32px;
         height: 32px;
         float: left;
-        margin: 0 6px 0 0;
+        margin: 0.1em 0.3em 0 0;
       }
 
-      .viber:after {
-        content: "";
+      .whatsapp {
         display: block;
         background: url("../../../assets/images/whatsapp.png") no-repeat;
         width: 32px;
         height: 32px;
         float: left;
-        margin: 0 6px 0 0;
+        margin: 0.1em 0.3em 0 0;
       }
     }
 
@@ -109,7 +133,7 @@
 
 @media (max-width: 880px) {
   .footer-distributed .footer-body .footer-left,
-  .footer-distributed .footer-body .footer-center,
+  .footer-distributed .footer-body .contacts,
   .footer-distributed .footer-body .footer-right {
     display: block;
     width: 100%;

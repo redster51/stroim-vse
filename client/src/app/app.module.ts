@@ -17,6 +17,11 @@ import {FormsModule} from '@angular/forms';
 import {AboutComponent} from './components/about/about.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { InstallationOfVerandasComponent } from './components/installation-of-verandas/installation-of-verandas.component';
+import { DesignOfVerandasComponent } from './components/design-of-verandas/design-of-verandas.component';
+import { InstallationOfClosedTerracesComponent } from './components/installation-of-closed-terraces/installation-of-closed-terraces.component';
+import { ServiceInfoComponent } from './components/service-info/service-info.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +37,18 @@ import { FooterComponent } from './components/footer/footer.component';
     ServicesComponent,
     AboutComponent,
     FooterComponent,
+    InstallationOfVerandasComponent,
+    DesignOfVerandasComponent,
+    InstallationOfClosedTerracesComponent,
+    ServiceInfoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [Title],
   bootstrap: [AppComponent]

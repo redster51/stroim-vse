@@ -1,1 +1,51 @@
-<p>services works!</p>
+<div class="main text-center">
+  <span class="d-block first-priority">SIP</span>
+  <span class="d-block second-priority">Предоставляемые услуги</span>
+</div>
+<div class="body-container">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="service text-center row align-items-center" routerLink="verandas-design">
+      <div class="col-custom">
+        <img src="../../../assets/images/{{services.designOfVerandas.photo}}"
+             width="200em" height="150em"
+             alt="Photo">
+      </div>
+      <div class="col-custom service-name">
+        <span class="second-priority">{{services.designOfVerandas.name}}</span>
+      </div>
+      <div class="col-custom">
+        <span class="second-priority">{{services.designOfVerandas.price}}</span>
+      </div>
+    </div>
+    <div class="line spacer"></div>
+    <div class="service text-center row align-items-center" routerLink="closed-terraces">
+      <div class="col-custom">
+        <img src="../../../assets/images/{{services.installationOfClosedTerraces.photo}}"
+             width="200em" height="150em"
+             alt="Photo">
+      </div>
+      <div class="col-custom service-name">
+        <span class="second-priority">{{services.installationOfClosedTerraces.name}}</span>
+      </div>
+      <div class="col-custom">
+        <span class="second-priority">{{services.installationOfClosedTerraces.price}}</span>
+      </div>
+    </div>
+    <div class="line spacer"></div>
+    <div class="service text-center row align-items-center" routerLink="verandas-installation">
+      <div class="col-custom">
+        <img src="../../../assets/images/{{services.installationOfVerandas.photo}}"
+             width="200em" height="150em"
+             alt="Photo">
+      </div>
+      <div class="col-custom service-name">
+        <span class="second-priority">{{services.installationOfVerandas.name}}</span>
+      </div>
+      <div class="col-custom">
+        <span class="second-priority">{{services.installationOfVerandas.price}}</span>
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </div>
+</div>

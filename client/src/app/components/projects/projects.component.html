@@ -1,1 +1,32 @@
-<p>projects works!</p>
+<div class="main text-center">
+  <span class="d-block first-priority">SIP</span>
+  <span class="d-block second-priority">Что мы построили</span>
+</div>
+<div class="body-container">
+  <div class="container" *ngIf="projects">
+    <div class="project" *ngFor="let project of projects">
+      <div class="second-priority">{{project.name}}</div>
+      <div class="line spacer"></div>
+      <div class="date">Дата постройки: {{project.endDate | date: 'dd.MM.yyyy'}}</div>
+      <div class="description">{{project.description}}</div>
+      <ngb-carousel
+        interval="12000"
+        [keyboard]="true"
+        [pauseOnHover]="true"
+        [wrap]="true">
+        <ng-template ngbSlide *ngFor="let photo of project.photos; let i = index">
+          <div class="picsum-img-wrapper">
+            <img src="{{backendId + photo}}" height="500px" alt="Фото проекта №{{i + 1}}">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+  <div class="body-loader" *ngIf="!projects">
+    <div class='loader'>
+      <div class="loader__ball"></div>
+      <div class="loader__ball"></div>
+      <div class="loader__ball"></div>
+    </div>
+  </div>
+</div>

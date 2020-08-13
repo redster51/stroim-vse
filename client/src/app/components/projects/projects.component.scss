@@ -1,0 +1,155 @@
+.body-container {
+  background-image: -moz-linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
+  background-image: -webkit-linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
+  background-image: -ms-linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
+  background-image: linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
+}
+
+.main {
+  background: #02c48d url(../../../assets/images/projects-header.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 7rem 0 10rem 0;
+}
+
+.project {
+  padding: 1em 0;
+}
+
+.first-priority {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 2rem 0;
+}
+
+.second-priority {
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+.date {
+  font-size: 20px;
+  margin-bottom: 0.5em;
+}
+
+.line {
+  border-bottom: 3px solid #fff;
+}
+
+.spacer {
+  margin: 0.75em 0;
+}
+
+ngb-carousel {
+  max-width: 38em;
+  margin: 50px auto;
+}
+
+ngb-carousel img {
+  width: 100%;
+  outline: none;
+}
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  z-index: 20;
+}
+
+.carousel-control-next {
+  z-index: 20;
+}
+
+.carousel-indicators {
+  z-index: 20;
+}
+
+.body-loader {
+  margin: 0;
+  height: 25em;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  margin: 2em;
+  animation: rotate 2s linear infinite normal;
+  height: 4rem;
+  position: relative;
+  width: 4rem;
+
+  &__ball {
+    animation: move1 1s ease-out infinite alternate;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    &:nth-of-type(2) {
+      animation-name: move2;
+    }
+
+    &:nth-of-type(3) {
+      animation-name: move3;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move1 {
+  0%, 5% {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -100%);
+  }
+}
+
+@keyframes move2 {
+  0%, 5% {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(100%, 100%);
+  }
+}
+
+@keyframes move3 {
+  0%, 15% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%, 100%);
+  }
+}

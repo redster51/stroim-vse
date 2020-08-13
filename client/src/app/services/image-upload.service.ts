@@ -1,18 +1,17 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpEvent, HttpEventType} from '@angular/common/http';
-import {map} from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageUploadService {
-  SERVER_URL: string = 'https://file.io/?expires=10y';
+  SERVER_URL: string = '/api';
 
   constructor(private http: HttpClient) {
   }
 
   uploadImages(formData) {
-    return this.http.post<any>(this.SERVER_URL,
+    return this.http.post<any>(`${this.SERVER_URL}/images`,
       formData,
       {reportProgress: true, observe: 'events'});
   }
