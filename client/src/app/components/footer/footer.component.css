@@ -1,0 +1,123 @@
+.footer-distributed {
+  background-color: #123123;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+}
+.footer-distributed a {
+  text-decoration: none;
+}
+.footer-distributed .footer-body {
+  max-width: 70em;
+  padding: 1em 0;
+  margin: 0 auto;
+}
+.footer-distributed .footer-body .footer-left, .footer-distributed .footer-body .contacts, .footer-distributed .footer-body .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+.footer-distributed .footer-body .footer-left {
+  width: 40%;
+}
+.footer-distributed .footer-body .footer-left h3 {
+  color: #ffffff;
+  margin: 0;
+}
+.footer-distributed .footer-body .footer-left h3 span {
+  color: #20c997;
+}
+.footer-distributed .footer-body .footer-left .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+.footer-distributed .footer-body .footer-left .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+.footer-distributed .footer-body .footer-left .footer-company-name {
+  color: #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+.footer-distributed .footer-body .contacts {
+  width: 35%;
+}
+.footer-distributed .footer-body .contacts a {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0.2em auto;
+}
+.footer-distributed .footer-body .contacts .email {
+  text-decoration: none;
+  color: #20c997;
+  margin-top: 0.25em;
+}
+.footer-distributed .footer-body .contacts p {
+  margin-bottom: 0;
+}
+.footer-distributed .footer-body .contacts .spacer {
+  width: 1em;
+}
+.footer-distributed .footer-body .contacts .row .ok {
+  display: block;
+  background: url("../../../assets/images/odnoklassniki.png") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.footer-distributed .footer-body .contacts .row .vk {
+  display: block;
+  background: url("../../../assets/images/vk.png") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.footer-distributed .footer-body .contacts .viber {
+  display: block;
+  background: url("../../../assets/images/viber.png") no-repeat;
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin: 0.1em 0.3em 0 0;
+}
+.footer-distributed .footer-body .contacts .whatsapp {
+  display: block;
+  background: url("../../../assets/images/whatsapp.png") no-repeat;
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin: 0.1em 0.3em 0 0;
+}
+.footer-distributed .footer-body .footer-right {
+  width: 20%;
+}
+.footer-distributed .footer-body .footer-right .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+.footer-distributed .footer-body .footer-right .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 880px) {
+  .footer-distributed .footer-body .footer-left,
+.footer-distributed .footer-body .contacts,
+.footer-distributed .footer-body .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,20 @@
+<div class="body-container">
+  <div class="header-spacer"></div>
+  <div class="main text-center"
+       [style.background]="header">
+    <span class="d-block first-priority">SIP</span>
+    <span class="d-block second-priority">{{someService.name}}</span>
+  </div>
+  <div class="container text-center">
+    <div class="line spacer"></div>
+    <div class="">{{someService.description}}</div>
+    <div class="line spacer"></div>
+    <div class="second-priority">Стоимость работы: {{someService.price}}</div>
+    <div class="line spacer"></div>
+    <div class="">
+      Для более подробной информации, Вы можете связаться с нами по контактам,
+      предоставленным во вкладке <a routerLink="/contacts">"Контакты"</a>.
+    </div>
+    <div class="spacer"></div>
+  </div>
+</div>

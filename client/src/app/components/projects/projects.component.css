@@ -1,8 +1,8 @@
 .body-container {
-  background-image: -moz-linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
-  background-image: -webkit-linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
-  background-image: -ms-linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
-  background-image: linear-gradient(37deg, rgb(95, 164, 74) 0%, rgb(127, 215, 171) 100%);
+  background-image: -moz-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+  background-image: -webkit-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+  background-image: -ms-linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
+  background-image: linear-gradient(37deg, #5fa44a 0%, #7fd7ab 100%);
 }
 
 .main {
@@ -99,23 +99,20 @@ ngb-carousel {
   height: 4rem;
   position: relative;
   width: 4rem;
-
-  &__ball {
-    animation: move1 1s ease-out infinite alternate;
-    background-color: #fff;
-    border-radius: 50%;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-
-    &:nth-of-type(2) {
-      animation-name: move2;
-    }
-
-    &:nth-of-type(3) {
-      animation-name: move3;
-    }
-  }
+}
+.loader__ball {
+  animation: move1 1s ease-out infinite alternate;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.loader__ball:nth-of-type(2) {
+  animation-name: move2;
+}
+.loader__ball:nth-of-type(3) {
+  animation-name: move3;
 }
 
 @keyframes rotate {
@@ -126,7 +123,6 @@ ngb-carousel {
     transform: rotate(360deg);
   }
 }
-
 @keyframes move1 {
   0%, 5% {
     transform: translate(0, 0);
@@ -135,7 +131,6 @@ ngb-carousel {
     transform: translate(0, -100%);
   }
 }
-
 @keyframes move2 {
   0%, 5% {
     transform: translate(0, 0);
@@ -144,7 +139,6 @@ ngb-carousel {
     transform: translate(100%, 100%);
   }
 }
-
 @keyframes move3 {
   0%, 15% {
     transform: translate(0);
@@ -153,7 +147,6 @@ ngb-carousel {
     transform: translate(-100%, 100%);
   }
 }
-
 svg {
   display: inline-block;
   vertical-align: middle;
@@ -166,16 +159,21 @@ path {
   stroke-linecap: round;
   stroke-dasharray: 193.904983521;
   fill: none;
-  animation:
-    load 4s linear infinite,
-    color 3s linear infinite;
+  animation: load 4s linear infinite, color 3s linear infinite;
 }
 
 @keyframes load {
-  from { stroke-dashoffset: 775.6199340820312; }
+  from {
+    stroke-dashoffset: 775.619934082;
+  }
+}
+@keyframes color {
+  33% {
+    stroke: #4a9a3a;
+  }
+  66% {
+    stroke: #123123;
+  }
 }
 
-@keyframes color {
-  33% { stroke: #4a9a3a; }
-  66% { stroke: #123123; }
-}
+/*# sourceMappingURL=projects.component.css.map */
