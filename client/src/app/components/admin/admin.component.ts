@@ -6,6 +6,7 @@ import {ImageUploadService} from '../../services/image-upload.service';
 import {TokenService} from '../../services/token.service';
 import {Router} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -16,26 +17,71 @@ export class AdminComponent implements OnInit {
   @ViewChild('fileUpload', {static: false}) fileUpload: ElementRef;
 
   files = [];
-  projectForm = {
+  projectList = [];
+  newProject = {
     name: '',
     description: '',
     endDate: '',
     photos: []
-  }
+  };
+
 
   constructor(private uploadService: ImageUploadService,
               private tokenService: TokenService,
+              private fb: FormBuilder,
               private projectService: ProjectService,
               private router: Router) {
   }
 
   ngOnInit(): void {
     if (!this.tokenService.getToken()) {
-      this.router.navigate(['admin']);
+      this.router.navigate(['vanya-login']);
+    } else {
+      this.updateProjectList();
     }
   }
 
-  uploadFile(file) {
+  private updateProjectList(): void {
+    this.projectService.getProjects().subscribe((projects) => {
+      this.projectList = [];
+      projects.forEach((project) => {
+        const projectForm = this.fb.group({
+          name: [project.name],
+          description: [project.description],
+          endDate: [project.endDate],
+          id: [project._id]
+        });
+        this.projectList.push(projectForm);
+      });
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  updateProject(project): void {
+    if (confirm('Вы уверены, что хотите внести эти изменения в текущий проект?')) {
+      this.projectService.updateProject(project.value).subscribe((data) => {
+        this.updateProjectList();
+        alert('Данные успешно обновлены!');
+      }, error => {
+        console.error(error);
+      });
+    }
+  }
+
+  deleteProject(projectId): void {
+    if (confirm('Вы уверены, что хотите удалить этот проект?')) {
+      this.projectService.deleteProject(projectId).subscribe(data => {
+        console.log(data);
+        this.updateProjectList();
+        alert('Проект успешно удален!');
+      }, error => {
+        console.error(error);
+      });
+    }
+  }
+
+  private uploadFile(file) {
     const formData = new FormData();
     formData.append('file', file.data);
     file.inProgress = true;
@@ -56,7 +102,7 @@ export class AdminComponent implements OnInit {
       })).subscribe((event: any) => {
       if (typeof (event) === 'object') {
         console.log(event.body);
-        this.projectForm.photos.push(event.body.link);
+        this.newProject.photos.push(event.body.link);
       }
     });
   }
@@ -81,10 +127,22 @@ export class AdminComponent implements OnInit {
   }
 
   saveProject() {
-    this.projectService.save(this.projectForm).subscribe(data => {
-      console.log(data);
+    this.projectService.save(this.newProject).subscribe((data) => {
+      this.clearNewProjectForm();
+      this.updateProjectList();
+      alert('Новый проект успешно добавлен!');
     }, error => {
       console.log(error);
     });
+  }
+
+  private clearNewProjectForm(): void {
+    this.files = [];
+    this.newProject = {
+      name: '',
+      description: '',
+      endDate: '',
+      photos: []
+    };
   }
 }

@@ -16,21 +16,33 @@ const sip = 'Строим SIP';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, data: {title: sip}},
-  {path: 'admin', redirectTo: 'login'},
-  {path: 'admin-page', component: AdminComponent, data: {title: `Страница админа | ${sip}`}},
+  {path: 'vanya', redirectTo: 'vanya-login'},
+  {path: 'vanya-admin', component: AdminComponent, data: {title: `Страница админа | ${sip}`}},
   {path: 'projects', component: ProjectsComponent, data: {title: `Проекты | ${sip}`}},
   {path: 'technology', component: TechnologyComponent, data: {title: `Технология | ${sip}`}},
   {path: 'contacts', component: ContactsComponent, data: {title: `Контакты | ${sip}`}},
-  {path: 'login', component: LoginComponent, data: {title: `Авторизация админа | ${sip}`}},
+  {path: 'vanya-login', component: LoginComponent, data: {title: `Авторизация админа | ${sip}`}},
   {
     path: 'services', component: ServicesComponent,
     data: {title: `Услуги | ${sip}`},
     pathMatch: 'full',
     children: []
   },
-  {path: 'services/closed-terraces', component: InstallationOfClosedTerracesComponent},
-  {path: 'services/verandas-design', component: DesignOfVerandasComponent},
-  {path: 'services/verandas-installation', component: InstallationOfVerandasComponent},
+  {
+    path: 'services/closed-terraces',
+    component: InstallationOfClosedTerracesComponent,
+    data: {title: `Крытые террасы | ${sip}`}
+  },
+  {
+    path: 'services/verandas-design',
+    component: DesignOfVerandasComponent,
+    data: {title: `Дизайн веранд | ${sip}`}
+  },
+  {
+    path: 'services/verandas-installation',
+    component: InstallationOfVerandasComponent,
+    data: {title: `Установка веранд | ${sip}`}
+  },
   {path: '**', component: NotFoundComponent, data: {title: `Страница не найдена | ${sip}`}}
 ];
 

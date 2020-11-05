@@ -16,6 +16,16 @@ ul {
   padding: 0;
 }
 
+.project {
+  padding: 2em;
+  margin: 2em 0;
+  background-color: rgba(226, 255, 213, 0.64);
+}
+
+.spacer {
+  margin: 0 1em;
+}
+
 @media (min-width: 544px) {
   .header-spacer {
     height: 4em;

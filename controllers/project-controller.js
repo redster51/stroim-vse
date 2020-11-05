@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 require('../models/project-schema')
 const crypto = require('crypto');
 const Project = mongoose.model('Project');
+const fs = require('fs');
 
 module.exports.saveProject = (req, res) => {
     const project = new Project();
@@ -33,11 +34,53 @@ module.exports.getProjects = (req, res) => {
     })
 }
 
+module.exports.updateProject = (req, res, next) => {
+    Project.findByIdAndUpdate(req.params.id,
+        {
+            name: req.body.name,
+            description: req.body.description,
+            endDate: req.body.endDate
+        },
+        (error, data) => {
+            if (error) {
+                console.log(error);
+                return next(error);
+            } else {
+                res.json(data);
+                console.log('Data updated successfully');
+            }
+        });
+}
+
+module.exports.deleteProject = (req, res, next) => {
+    Project.findByIdAndDelete(req.params.id, (error, data) => {
+        if (error) {
+            console.log(error);
+            return next(error);
+        } else {
+            res.json(data);
+            data.photos.forEach(photoName => {
+                deletePhoto(`./uploads/${photoName}.jpg`);
+            })
+        }
+    });
+}
+
 module.exports.getPhoto = async (req, res) => {
     await res.sendFile(
         `/uploads/${req.params.id}.jpg`,
         {root: `${__dirname}/../`}
     );
+}
+
+deletePhoto = (name) => {
+    fs.unlink(name, (err) => {
+        if (err) {
+            throw err
+        } else {
+            console.log("Successfully deleted the file.")
+        }
+    });
 }
 
 module.exports.savePhotos = async (req, res) => {

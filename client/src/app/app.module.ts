@@ -13,7 +13,7 @@ import {TechnologyComponent} from './components/technology/technology.component'
 import {ContactsComponent} from './components/contacts/contacts.component';
 import {ServicesComponent} from './components/services/services.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AboutComponent} from './components/about/about.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
@@ -48,7 +48,8 @@ import { ServiceInfoComponent } from './components/service-info/service-info.com
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [Title],
   bootstrap: [AppComponent]

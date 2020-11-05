@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
-      this.router.navigate(['admin-page']);
+      this.router.navigate(['vanya-admin']);
     }
   }
 
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     this.authService.signInAdmin(this.adminForm).subscribe((user) => {
       console.log(user);
       this.tokenService.saveToken(user.token);
-      this.router.navigate(['admin-page']);
+      this.router.navigate(['vanya-admin']);
     }, (error) => {
       console.log(error);
     });
