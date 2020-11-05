@@ -11,12 +11,16 @@ import {ServicesComponent} from './components/services/services.component';
 import {InstallationOfClosedTerracesComponent} from './components/installation-of-closed-terraces/installation-of-closed-terraces.component';
 import {DesignOfVerandasComponent} from './components/design-of-verandas/design-of-verandas.component';
 import {InstallationOfVerandasComponent} from './components/installation-of-verandas/installation-of-verandas.component';
+import {LolComponent} from './components/lol/lol.component';
 
 const sip = 'Строим SIP';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, data: {title: sip}},
   {path: 'vanya', redirectTo: 'vanya-login'},
+  {path: 'admin', component: LolComponent},
+  {path: 'admin-page', component: LolComponent},
+  {path: 'admin-panel', component: LolComponent},
   {path: 'vanya-admin', component: AdminComponent, data: {title: `Страница админа | ${sip}`}},
   {path: 'projects', component: ProjectsComponent, data: {title: `Проекты | ${sip}`}},
   {path: 'technology', component: TechnologyComponent, data: {title: `Технология | ${sip}`}},

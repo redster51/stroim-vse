@@ -22,6 +22,7 @@ import { InstallationOfVerandasComponent } from './components/installation-of-ve
 import { DesignOfVerandasComponent } from './components/design-of-verandas/design-of-verandas.component';
 import { InstallationOfClosedTerracesComponent } from './components/installation-of-closed-terraces/installation-of-closed-terraces.component';
 import { ServiceInfoComponent } from './components/service-info/service-info.component';
+import { LolComponent } from './components/lol/lol.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ServiceInfoComponent } from './components/service-info/service-info.com
     DesignOfVerandasComponent,
     InstallationOfClosedTerracesComponent,
     ServiceInfoComponent,
+    LolComponent,
   ],
   imports: [
     BrowserModule,

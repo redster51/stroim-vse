@@ -103,6 +103,7 @@ export class AdminComponent implements OnInit {
       if (typeof (event) === 'object') {
         console.log(event.body);
         this.newProject.photos.push(event.body.link);
+        //Автоматическая загрузка нового проекта должна делаться с этого момента!!!
       }
     });
   }
@@ -133,6 +134,7 @@ export class AdminComponent implements OnInit {
       alert('Новый проект успешно добавлен!');
     }, error => {
       console.log(error);
+      alert('Произошла непредвиденная ошибка. Проверьте консоль...')
     });
   }
 
