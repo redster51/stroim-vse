@@ -65,3 +65,27 @@ a:hover {
     margin-left: 0.5em;
   }
 }
+
+@media (max-width: 405px) {
+  .nav-masthead {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav-masthead {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-masthead {
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 325px) {
+  .nav-masthead {
+    font-size: 0.7em;
+  }
+}

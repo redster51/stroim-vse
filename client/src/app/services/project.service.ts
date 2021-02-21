@@ -16,4 +16,12 @@ export class ProjectService {
   getProjects(): Observable<any> {
     return this.http.get(`${this.apiURI}/projects`);
   }
+
+  updateProject(project): Observable<any> {
+    return this.http.put(`${this.apiURI}/projects/${project.id}`, project);
+  }
+
+  deleteProject(projectId): Observable<any> {
+    return this.http.delete(`${this.apiURI}/projects/${projectId}`);
+  }
 }

@@ -1,8 +1,8 @@
-<div class="header-spacer"></div>
+<div class="header-spacer sticky-top"></div>
 
-<div class="container text-center">
-  <div class="card text-center">
-    <h3 class="card-header">
+<div class="container">
+  <div class="card">
+    <h3 class="card-header text-center">
       Загрузка нового проекта
     </h3>
     <div class="card-body">
@@ -15,7 +15,7 @@
                    id="name"
                    aria-label="Name"
                    aria-describedby="Name"
-                   [(ngModel)]="projectForm.name"
+                   [(ngModel)]="newProject.name"
                    [ngModelOptions]="{standalone: true}">
           </div>
         </div>
@@ -27,7 +27,7 @@
                    class="form-control"
                    aria-label="End-date"
                    aria-describedby="End-date"
-                   [(ngModel)]="projectForm.endDate"
+                   [(ngModel)]="newProject.endDate"
                    [ngModelOptions]="{standalone: true}">
           </div>
         </div>
@@ -38,13 +38,14 @@
             <textarea id="description"
                       class="form-control"
                       aria-label="Description"
-                      [(ngModel)]="projectForm.description"
+                      [(ngModel)]="newProject.description"
                       [ngModelOptions]="{standalone: true}"></textarea>
           </div>
         </div>
       </form>
-
-      <button class="btn btn-outline-info mb-3" (click)="onClick()">Загрузить фото</button>
+      <div class="text-center">
+        <button class="btn btn-outline-info mb-3" (click)="onClick()">Загрузить фото</button>
+      </div>
       <ul>
         <li *ngFor="let file of files" class="list-group-item">
           <div class="progress">
@@ -61,10 +62,36 @@
         </li>
       </ul>
     </div>
-    <div class="card-footer">
+    <div class="card-footer text-center">
       <button type="button" class="btn btn-success" (click)="saveProject()">Загрузить</button>
     </div>
   </div>
   <input class="custom-file-input" type="file" #fileUpload id="fileUpload" name="fileUpload"
          multiple="multiple" accept="image/*" aria-describedby="project-images">
+  <!--------------------------------------------------------------------------------------------->
+  <div class="text-center">
+    <h1>Работа с старыми проектами</h1>
+  </div>
+  <div class="card project" *ngFor="let project of projectList">
+    <form [formGroup]="project" (ngSubmit)="updateProject(project)">
+      <div class="text-center">
+        <button type="button" class="btn btn-danger" (click)="deleteProject(project.value.id)">Удалить проект</button>
+      </div>
+      <div class="form-group">
+        <label for="inputName">Название</label>
+        <input type="text" class="form-control" id="inputName" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="inputDescription">Описание</label>
+        <textarea class="form-control" id="inputDescription" formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="inputDate">Дата создания</label>
+        <input type="date" class="form-control" id="inputDate" formControlName="endDate">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Применить изменения</button>
+      </div>
+    </form>
+  </div>
 </div>

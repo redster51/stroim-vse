@@ -4,6 +4,12 @@
 body {
   font-family: "Gotham Pro Light", Roboto, sans-serif;
   color: white;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+img {
+  max-width: 100% !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
