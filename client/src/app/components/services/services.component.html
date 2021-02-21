@@ -5,45 +5,46 @@
 <div class="body-container">
   <div class="container">
     <div class="spacer"></div>
-    <div class="service text-center row align-items-center" routerLink="verandas-design">
-      <div class="col-custom">
-        <img src="../../../assets/images/{{services.designOfVerandas.photo}}"
-             width="200em" height="150em"
-             alt="Photo">
-      </div>
-      <div class="col-custom service-name">
-        <span class="second-priority">{{services.designOfVerandas.name}}</span>
-      </div>
-      <div class="col-custom">
-        <span class="second-priority">{{services.designOfVerandas.price}}</span>
-      </div>
+    <div class="text">
+      Достоинства конструкций, смонтированных по канадской технологии из СИП-панелей, давно проверены на практике. Метод
+      строительства домов, пригодных для постоянного проживания в условиях сурового климата, успели оценить и в России.
+      Ровные стены, не нуждающиеся в теплоизоляции, – преимущество, упрощающее отделку частного дома из сип-панелей.
+      <br><br>
+      Разнообразие интерьерных решений помогает добиться индивидуальности. Однако внутреннее оформление дома – вопрос не
+      только эстетики, но и безопасности. К выбору способов отделки стен из СИП-панелей, потолка и пола стоит отнестись
+      ответственно. Чтобы добиться комфорта, достаточно прислушаться к советам специалистов, приняв во внимание основные
+      правила и рекомендации по поиску подходящих технологий и облицовочных материалов.
+      Компания "Строим SIP" оказывает услуги по строительству частных домов, общественных зданий и промышленных
+      сооружений по так называемой "канадской технологии быстровозводимого жилья" с применением SIP панелей, включая
+      следующие этапы:
+      <br/><br/>
+      <ul>
+        <li>Устройство фундаментов (на винтовых сваях, буронабивных сваях, ленточных мелкозаглубленных, монолитных
+          плитах);
+        </li>
+        <li>Сборка домокомплекта, изготовленного на нашем производстве;</li>
+        <li>Устройство кровли любым кровельным покрытием (гибкой черепицей, металлочерепицей, еврошифером и т.д.);</li>
+        <li>Устройство наружной отделки любым отделочным материалом (сайдингом виниловым, фиброцементным, фасадной
+          штукатуркой, фасадной плиткой и т.д.);
+        </li>
+        <li>Установка стеклопакетов;</li>
+        <li>Устройство инженерных сетей - отопления, канализации, вентиляции, электрики и сантехники;</li>
+        <li>Устройство внутренней черновой и чистовой отделки</li>
+      </ul>
+      Стоимость работ по каждому отдельно взятому объекту рассчитывается согласно смете и проекту, и зависит от объемов,
+      сложности, применяемых материалов и т.д.
     </div>
-    <div class="line spacer"></div>
-    <div class="service text-center row align-items-center" routerLink="closed-terraces">
-      <div class="col-custom">
-        <img src="../../../assets/images/{{services.installationOfClosedTerraces.photo}}"
-             width="200em" height="150em"
-             alt="Photo">
-      </div>
-      <div class="col-custom service-name">
-        <span class="second-priority">{{services.installationOfClosedTerraces.name}}</span>
-      </div>
-      <div class="col-custom">
-        <span class="second-priority">{{services.installationOfClosedTerraces.price}}</span>
-      </div>
-    </div>
-    <div class="line spacer"></div>
-    <div class="service text-center row align-items-center" routerLink="verandas-installation">
-      <div class="col-custom">
-        <img src="../../../assets/images/{{services.installationOfVerandas.photo}}"
-             width="200em" height="150em"
-             alt="Photo">
-      </div>
-      <div class="col-custom service-name">
-        <span class="second-priority">{{services.installationOfVerandas.name}}</span>
-      </div>
-      <div class="col-custom">
-        <span class="second-priority">{{services.installationOfVerandas.price}}</span>
+    <div *ngFor="let service of serviceNames">
+      <div class="line spacer"></div>
+      <div class="service text-center row align-items-center" routerLink="{{service}}">
+        <div class="col-custom">
+          <img src="../../../assets/images/{{services[service].photo}}"
+               width="200em" height="150em"
+               alt="Photo">
+        </div>
+        <div class="col-custom service-name">
+          <span class="second-priority">{{services[service].name}}</span>
+        </div>
       </div>
     </div>
     <div class="spacer"></div>

@@ -3,13 +3,14 @@
   <div class="main text-center"
        [style.background]="header">
     <span class="d-block first-priority">SIP</span>
-    <span class="d-block second-priority">{{someService.name}}</span>
+<!--    <span class="d-block second-priority">{{selectedService.name}}</span>-->
   </div>
   <div class="container text-center">
+    <div class="second-priority text-left">{{selectedService.name}}</div>
     <div class="line spacer"></div>
-    <div class="">{{someService.description}}</div>
+    <div class="text-left" [innerHTML]="serviceDescription"></div>
     <div class="line spacer"></div>
-    <div class="second-priority">Стоимость работы: {{someService.price}}</div>
+    <div class="">Стоимость работы: {{selectedService.price}}</div>
     <div class="line spacer"></div>
     <div class="">
       Для более подробной информации, Вы можете связаться с нами по контактам,

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { SERVICES } from '../../../assets/constants';
+import {Component, OnInit} from '@angular/core';
+import {SERVICES} from '../../shared/constants';
 
 @Component({
   selector: 'app-services',
@@ -7,11 +7,14 @@ import { SERVICES } from '../../../assets/constants';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
+  serviceNames = Object.keys(this.services);
+
   get services() {
     return SERVICES;
   }
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.tokenService.getToken()) {
-      this.router.navigate(['vanya-login']);
+      this.router.navigate(['vanya-login']).then(r => console.log(r));
     } else {
       this.updateProjectList();
     }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from "../../services/authentication.service";
 import {TokenService} from "../../services/token.service";
 import {Router} from "@angular/router";
+import {IAdmin} from '../../shared/models';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  adminForm = {
+  adminForm: IAdmin = {
     login: '',
     password: ''
   }
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
-      this.router.navigate(['vanya-admin']);
+      this.router.navigate(['vanya-admin']).then();
     }
   }
 

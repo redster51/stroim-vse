@@ -4,6 +4,17 @@
   padding: 7rem 0 10rem 0;
 }
 
+a {
+  color: #c7f1af;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #36633b;
+  transition: color 0.3s;
+}
+
 .first-priority {
   font-size: 60px;
   font-weight: bold;

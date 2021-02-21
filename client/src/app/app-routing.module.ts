@@ -8,10 +8,8 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {TechnologyComponent} from './components/technology/technology.component';
 import {ContactsComponent} from './components/contacts/contacts.component';
 import {ServicesComponent} from './components/services/services.component';
-import {InstallationOfClosedTerracesComponent} from './components/installation-of-closed-terraces/installation-of-closed-terraces.component';
-import {DesignOfVerandasComponent} from './components/design-of-verandas/design-of-verandas.component';
-import {InstallationOfVerandasComponent} from './components/installation-of-verandas/installation-of-verandas.component';
 import {LolComponent} from './components/lol/lol.component';
+import {SelectedServiceComponent} from './components/selected-service/selected-service.component';
 
 const sip = 'Строим SIP';
 
@@ -32,21 +30,7 @@ const routes: Routes = [
     pathMatch: 'full',
     children: []
   },
-  {
-    path: 'services/closed-terraces',
-    component: InstallationOfClosedTerracesComponent,
-    data: {title: `Крытые террасы | ${sip}`}
-  },
-  {
-    path: 'services/verandas-design',
-    component: DesignOfVerandasComponent,
-    data: {title: `Дизайн веранд | ${sip}`}
-  },
-  {
-    path: 'services/verandas-installation',
-    component: InstallationOfVerandasComponent,
-    data: {title: `Установка веранд | ${sip}`}
-  },
+  {path: 'services/:selected', component: SelectedServiceComponent},
   {path: '**', component: NotFoundComponent, data: {title: `Страница не найдена | ${sip}`}}
 ];
 

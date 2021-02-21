@@ -8,8 +8,14 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    hash: String,
-    salt: String
+    hash:  {
+        type: String,
+        required: true
+    },
+    salt: {
+        type: String,
+        required: true
+    }
 });
 
 userSchema.methods.setPassword = function (password) {
