@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // [SH] Initialise Passport before using the route middleware
 app.use(passport.initialize({}));
 
-app.use('/api', apiRouter);
+app.use('/', apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
