@@ -1748,10 +1748,10 @@ class AuthenticationService {
         };
     }
     registerAdmin(admin) {
-        return this.http.post('/api/register', admin);
+        return this.http.post('/api/api/register', admin);
     }
     signInAdmin(admin) {
-        return this.http.post('/api/signin', admin, this.options);
+        return this.http.post('/api/api/signin', admin, this.options);
     }
 }
 AuthenticationService.ɵfac = function AuthenticationService_Factory(t) { return new (t || AuthenticationService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_token_service__WEBPACK_IMPORTED_MODULE_2__["TokenService"])); };
@@ -1784,7 +1784,7 @@ __webpack_require__.r(__webpack_exports__);
 class ImageUploadService {
     constructor(http) {
         this.http = http;
-        this.SERVER_URL = '/api';
+        this.SERVER_URL = '/api/api';
     }
     uploadImages(formData) {
         return this.http.post(`${this.SERVER_URL}/images`, formData, { reportProgress: true, observe: 'events' });
@@ -1820,7 +1820,7 @@ __webpack_require__.r(__webpack_exports__);
 class ProjectService {
     constructor(http) {
         this.http = http;
-        this.apiURI = '/api';
+        this.apiURI = '/api/api';
     }
     save(project) {
         return this.http.post(`${this.apiURI}/projects`, project);
