@@ -8,7 +8,7 @@ import {IProject} from '../../shared/models';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  backendId: string = '/api/images/';
+  backendId: string = '/api/api/images/';
   projects: Array<IProject>;
   constructor(private projectService: ProjectService) { }
 

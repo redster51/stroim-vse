@@ -1355,7 +1355,7 @@ function ProjectsComponent_div_7_Template(rf, ctx) { if (rf & 1) {
 class ProjectsComponent {
     constructor(projectService) {
         this.projectService = projectService;
-        this.backendId = '/api/images/';
+        this.backendId = '/api/api/images/';
     }
     ngOnInit() {
         this.getAll();
