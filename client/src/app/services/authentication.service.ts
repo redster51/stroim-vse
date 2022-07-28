@@ -24,10 +24,10 @@ export class AuthenticationService {
   }
 
   registerAdmin(admin: Admin): Observable<any> {
-    return this.http.post('/api/register', admin);
+    return this.http.post('/api/api/register', admin);
   }
 
   signInAdmin(admin: Admin): Observable<any> {
-    return this.http.post('/api/signin', admin, this.options);
+    return this.http.post('/api/api/signin', admin, this.options);
   }
 }

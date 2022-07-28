@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ImageUploadService {
-  SERVER_URL: string = '/api';
+  SERVER_URL: string = '/api/api';
 
   constructor(private http: HttpClient) {
   }
